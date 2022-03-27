@@ -1,0 +1,1 @@
+# gmt-show-a-fortune
