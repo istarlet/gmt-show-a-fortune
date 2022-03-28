@@ -1,1 +1,1 @@
-# gmt-show-a-fortune
+# Go Make Things: Show a Fortune
