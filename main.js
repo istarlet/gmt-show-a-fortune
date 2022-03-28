@@ -3,7 +3,7 @@ let btn = document.querySelector(".btn");
 let fortune = document.querySelector(".fortune");
 
 // The fortune responses
-let responses = [
+let fortunes = [
   "It is certain.",
   "It is decidedly so.",
   "Without a doubt.",
@@ -52,8 +52,8 @@ function shuffle(array) {
   return array;
 }
 
-// Create a new, shuffled array from lunch
-let shuffledFortunes = shuffle(Array.from(responses));
+// Create a new, shuffled array from fortunes
+let shuffledFortunes = shuffle(Array.from(fortunes));
 
 // Get a random fortune from shuffled fortunes
 function getFortunes() {
