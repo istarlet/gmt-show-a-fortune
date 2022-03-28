@@ -1,6 +1,7 @@
 // Get the DOM elements
 let btn = document.querySelector(".btn");
 let fortune = document.querySelector(".fortune");
+let resetFortune = document.querySelector(".resetfortune");
 
 // The fortune responses
 let fortunes = [
@@ -62,3 +63,4 @@ function getFortunes() {
 
 // Listen for clicks on the button
 btn.addEventListener("click", getFortunes);
+
