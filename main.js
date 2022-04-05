@@ -3,6 +3,9 @@ let btn = document.querySelector(".btn");
 let fortune = document.querySelector(".fortune");
 let resetFortune = document.querySelector(".resetfortune");
 
+// Hold the timeout
+let timeout;
+
 // The fortune responses
 let fortunes = [
   "It is certain.",
@@ -25,6 +28,14 @@ let fortunes = [
   "My sources say no.",
   "Outlook not so good.",
   "Very doubtful.",
+];
+
+// Loading messages to display before showing fortune
+let loading = [
+  "Consulting the spirits...",
+  "Gazing into the depths of the future...",
+  "BRB, jumping into my time machine...",
+  "I see... I see...",
 ];
 
 /**
@@ -53,23 +64,25 @@ function shuffle(array) {
   return array;
 }
 
+// This no longer worked when adding the time delay
 // Create a new, shuffled array from fortunes
-let shuffledFortunes = shuffle(Array.from(fortunes));
+// let shuffledFortunes = shuffle(Array.from(fortunes));
 
 // Get a random fortune from shuffled fortunes
 function getFortunes() {
-  fortune.textContent = `${shuffledFortunes[0]}`;
+  // Show a loading message
+  shuffle(loading);
+  fortune.textContent = loading[0];
+
+  // Clear any existing fortunes
+  clearTimeout(timeout);
+
+  // Set the fortune to show in 2 seconds
+  timeout = setTimeout(function () {
+    shuffle(fortunes);
+    fortune.textContent = fortunes[0];
+  }, 2000);
 }
 
 // Listen for clicks on the button
 btn.addEventListener("click", getFortunes);
-
-// Loading messages to display before showing fortune
-let loading = [
-	'Consulting the spirits...',
-	'Gazing into the depths of the future...',
-	'BRB, jumping into my time machine...',
-	'I see... I see...'
-];
-
-
