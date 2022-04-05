@@ -64,4 +64,12 @@ function getFortunes() {
 // Listen for clicks on the button
 btn.addEventListener("click", getFortunes);
 
+// Loading messages to display before showing fortune
+let loading = [
+	'Consulting the spirits...',
+	'Gazing into the depths of the future...',
+	'BRB, jumping into my time machine...',
+	'I see... I see...'
+];
+
 
