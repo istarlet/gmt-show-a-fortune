@@ -64,3 +64,4 @@ function getFortunes() {
 // Listen for clicks on the button
 btn.addEventListener("click", getFortunes);
 
+
